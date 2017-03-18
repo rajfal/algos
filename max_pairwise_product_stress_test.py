@@ -5,14 +5,12 @@ import random
 
 def FastPairwiseProduct1(a):
 ## attempt #1
-    result = 0
+    product = 0
 
     n = len(a)
     for i in range(0, n):
         for j in range(i+1, n):
-            print(a[i])
-            print(a[j])
-            if a[i]*a[j] > result:
+            if a[i]*a[j] > product:
                 product = a[i]*a[j]
 
     ## test result:
@@ -68,11 +66,11 @@ def main():
     keep_testing = True    
     a = []
     while keep_testing:
-        n = random.randint(2,5)
+        n = random.randint(2,11)
         print("----------------------------------------------")
         print(n)
         
-        a = [ random.randint(0,10) for x in range(0,n)  ]
+        a = [ random.randint(0,100000) for x in range(0,n)  ]
         print(a)
         
         res1 = FastPairwiseProduct1(a)
